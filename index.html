@@ -20,7 +20,7 @@
 	<!--linking to Leaflet API, Geosearch, FontAwesome-->
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 	<link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@3.1.0/dist/geosearch.css"/>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
 	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 	<script src="https://unpkg.com/leaflet-geosearch@3.1.0/dist/bundle.min.js"></script>
 
@@ -42,8 +42,8 @@
   <!--<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">-->
 
-<script type="text/css"></script>
-<!--<div id="map" class="map">  </div>-->
+
+<!--<div id="map" class="map">  <script type="text/css"></script></div>-->
 
 <style>
 /*********************************************************
@@ -499,7 +499,7 @@ a.polyline-measure-clearControl:active {
 
 /* Target the specific icon in the 'add-marker' state */
 .leaflet-bar .fa-trash-alt {
-    color: indianred; Change icon color to green */
+    color: indianred; /*Change icon color to green */
 }
 
 /* Optional: Change the icon color on hover for better UX */
@@ -582,7 +582,8 @@ body {
    // Sets centre of map at the LatLong specified with Zoom level
       var map = L.map('map', {
           zoomControl: false,
-          maxZoom:18
+          maxZoom:18,
+          tap:false
           
           });
 
@@ -2906,20 +2907,20 @@ homeMarker.openPopup();
             },
             {
                 coords: [42.383392634232415, -82.17773668846122],
-                question: "Find small keys hidden at this location.  What colour are the dots?",
+                question: "What is the name of the plant with a yellow ribbon?",
+                answer: "plant",
+                marker: null
+            },
+            {
+                coords: [42.38296447272727, -82.1764381837849],
+                question: "Find small keys hidden somewhere at this location. What colour dots are on each key?",
                 answer: "red",
                 marker: null
             },
             {
-                coords: [42.38335661169547, -82.1776296661857],
-                question: "Use the keys to open a small lock-box also hidden at this location.  What is in it?",
+                coords: [42.383135808845964, -82.17608364782382],
+                question: "Find & open the lock-box also hidden at this location.  What is in it?",
                 answer: "puppy",
-                marker: null
-            },
-            {
-                coords: [42.382931639245484, -82.17639920288224],
-                question: "What character is hidden at this location (1st name only)?",
-                answer: "peppa",
                 marker: null
             },
             
@@ -2938,8 +2939,8 @@ homeMarker.openPopup();
             // Add more questions here
             {
                 coords: [42.38394604115685, -82.17900629797823],
-                question: "FINAL MATH: What is Sydney's age (X 2) - (Liv's age) + 2?",
-                answer: "2",
+                question: "FINAL MATH: What is the square root of 9, then squared, plus 4?",
+                answer: "13",
                 marker: null
             }
                     ];
